@@ -70,7 +70,6 @@ export default function ProductDetail() {
       ) : (
         <>
           <Grid columns={{ initial: "1", md: "2" }} gap="6" width="auto">
-            {/* Left Column - Product Image */}
             <Card className="p-4" variant="surface">
               <Box className="relative w-full h-80 rounded-md overflow-hidden">
                 {product?.imageUrl && (
