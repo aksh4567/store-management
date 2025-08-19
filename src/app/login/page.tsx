@@ -14,6 +14,7 @@ import {
   Container,
 } from "@radix-ui/themes";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 export default function Page() {
@@ -21,6 +22,7 @@ export default function Page() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<{ message?: string }>({});
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   async function handleLogin() {
     setLoading(true);
@@ -33,7 +35,8 @@ export default function Page() {
       });
 
       if (data.loginUser) {
-        window.location.href = "/";
+        // window.location.href = "/";
+        router.push("/");
       } else {
         setError({ message: "Login failed. Please check your credentials." });
       }
