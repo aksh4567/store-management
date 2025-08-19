@@ -34,3 +34,43 @@ export default function RootLayout({
     </html>
   );
 }
+// "use client";
+// import Header from "@/components/header";
+// import UserProvider from "@/components/contexts/user-context";
+// import { getUserFromCookies } from "@/lib/helper";
+// import { redirect } from "next/navigation";
+// import { ReactNode, useEffect, useState } from "react";
+// import { Theme } from "@radix-ui/themes";
+// import ThemeToggle from "@/components/buttons/ThemeToggle";
+
+// export default function Layout({ children }: { children: ReactNode }) {
+//   const [appearance, setAppearance] = useState<"light" | "dark">("light");
+
+//   // Optional: Persist theme in localStorage
+//   useEffect(() => {
+//     const stored = window.localStorage.getItem("theme");
+//     if (stored === "light" || stored === "dark") setAppearance(stored);
+//   }, []);
+//   useEffect(() => {
+//     window.localStorage.setItem("theme", appearance);
+//   }, [appearance]);
+
+//   // You can't use await in a client component, so move auth logic up or use a different pattern
+
+//   return (
+//     <Theme appearance={appearance}>
+//       <UserProvider>
+//         <div className="flex flex-col min-h-screen">
+//           <Header />
+//           <div className="flex justify-end p-4">
+//             <ThemeToggle
+//               appearance={appearance}
+//               setAppearance={setAppearance}
+//             />
+//           </div>
+//           <main className="flex-1">{children}</main>
+//         </div>
+//       </UserProvider>
+//     </Theme>
+//   );
+// }

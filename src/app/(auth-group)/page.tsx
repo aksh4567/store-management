@@ -8,6 +8,8 @@ import gqlClient from "@/lib/services/gql";
 import { GET_ALL_PRODUCTS } from "@/lib/gql/queries";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   const { user } = useContext(UserContext);
   const [products, setProducts] = useState<Product[]>([]);

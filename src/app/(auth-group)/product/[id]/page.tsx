@@ -1,4 +1,6 @@
-"use client";
+export const dynamic = "force-dynamic";
+
+("use client");
 import { useContext, useEffect, useState } from "react";
 import { Product, Sale } from "../../../../../generated/prisma";
 import gqlClient from "@/lib/services/gql";
