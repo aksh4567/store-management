@@ -1,4 +1,6 @@
-"use client";
+export const dynamic = "force-dynamic";
+("use client");
+
 import { LOGIN_USER } from "@/lib/gql/queries";
 import gqlClient from "@/lib/services/gql";
 import {
@@ -17,7 +19,7 @@ import Image from "next/image";
 
 import { useState } from "react";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export default function Page() {
   const [userCred, setUserCred] = useState("");
