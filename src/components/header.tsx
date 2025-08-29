@@ -23,6 +23,10 @@ export default function Header() {
     if (setIsDark) setIsDark(!isDark);
   };
 
+  if (!user) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <header
       className="h-24 flex justify-between p-8 border-2 items-center w-full"

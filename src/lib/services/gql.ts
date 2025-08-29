@@ -1,7 +1,7 @@
 import { GraphQLClient } from "graphql-request";
 
 const gqlClient = new GraphQLClient(
-  "https://store-management-inky.vercel.app/api/graphql"
+  (process.env.NEXT_PUBLIC_BASE_URL as string) + "/api/graphql"
 );
 
 export default gqlClient;

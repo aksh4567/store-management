@@ -17,6 +17,8 @@ import Image from "next/image";
 
 import { useState } from "react";
 
+export const dynamic = "force-dynamic";
+
 export default function Page() {
   const [userCred, setUserCred] = useState("");
   const [password, setPassword] = useState("");
