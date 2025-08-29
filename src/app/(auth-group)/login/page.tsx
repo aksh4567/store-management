@@ -1,5 +1,5 @@
+"use client";
 export const dynamic = "force-dynamic";
-("use client");
 
 import { LOGIN_USER } from "@/lib/gql/queries";
 import gqlClient from "@/lib/services/gql";
@@ -16,6 +16,7 @@ import {
   Container,
 } from "@radix-ui/themes";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 
@@ -26,6 +27,7 @@ export default function Page() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<{ message?: string }>({});
   const [loading, setLoading] = useState(false);
+  const router = useRouter(); // Added this for proper navigation
 
   async function handleLogin() {
     setLoading(true);
@@ -36,9 +38,14 @@ export default function Page() {
         userCred,
         password,
       });
-
       if (data.loginUser) {
-        window.location.href = "/";
+        // Use router.push instead of window.location.href for better Next.js navigation
+        router.push("/");
+        // Force a page refresh to ensure proper authentication state
+        window.location.reload();
+
+        // if (data.loginUser) {
+        //   window.location.href = "/";
       } else {
         setError({ message: "Login failed. Please check your credentials." });
       }
